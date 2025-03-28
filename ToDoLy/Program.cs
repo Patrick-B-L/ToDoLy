@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using ToDoLy;
 
-// Continue with cleaning up the code and make the user experience more intuitive by adding lines and changing text colors etc... 
+// Continue with: updating comments, cleaning up the code and make the user experience more intuitive by adding lines and changing text colors etc... 
 //Remember to commit and push to Github every now and then
 
 // Only for testing purposes
