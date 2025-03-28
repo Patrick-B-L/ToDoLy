@@ -83,6 +83,24 @@ namespace ToDoLy
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
+        public static int GetCountTotalNumberOfTasks()
+        { 
+            int totalNumberOfTasks = toDoTaskList.Count();
+            return totalNumberOfTasks;
+        }
+
+        public static int GetCountTotalNumberOfTasksDone()
+        {
+            int totalNumberOfTasksDone = toDoTaskList.Where(task => task.Status.Contains("Done")).Count();
+            return totalNumberOfTasksDone;
+        }
+
+        public static int GetCountTotalNumberOfTasksToDo()
+        {
+            int totalNumberOfTasksToDo = GetCountTotalNumberOfTasks() - GetCountTotalNumberOfTasksDone();
+            return totalNumberOfTasksToDo;
+        }
+
         public static void InitializeSampleData()
         {
             ListManager.AddTasktoDoTaskList(new ToDoTask("Buy groceries", new DateOnly(2025, 3, 28), "Pending", "Personal"));

@@ -17,7 +17,7 @@ namespace ToDoLy
         // Show status of the tasks
         public static void ShowStatus()
         {
-            Console.WriteLine("You have X tasks todo and Y tasks are done!");
+            Console.WriteLine($"You have {ListManager.GetCountTotalNumberOfTasksToDo()} tasks todo and {ListManager.GetCountTotalNumberOfTasksDone()} tasks are done!");
         }
         // Show main menu 
         public static void MainMenu()

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using ToDoLy;
 
-// Continue with case 4 in Program.cs
+// Continue with Display.ShowStatus()
 
 // Only for testing purposes
 //Listmanager.InitializeSampleData();
