@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ToDoLy
 {
+    // The Display class handles all user interface components, such as menus and status messages
     class Display
     {
-        // Welcome the user
+        // Method to welcome the user to the application
         public static void Greeting()
         {
             Console.WriteLine("Welcome to ToDoLy");
@@ -17,9 +18,10 @@ namespace ToDoLy
         // Show status of the tasks
         public static void ShowStatus()
         {
+            // Show the total number of tasks to do and the total number of completed tasks
             Console.WriteLine($"You have {ListManager.GetCountTotalNumberOfTasksToDo()} tasks todo and {ListManager.GetCountTotalNumberOfTasksDone()} tasks are done!");
         }
-        // Show main menu 
+        // Present the main menu with available actions to the user
         public static void MainMenu()
         {
             Console.WriteLine("Main Menu:");
@@ -30,7 +32,7 @@ namespace ToDoLy
             Console.WriteLine("Enter Option");
         }
 
-        // Show Task List menu
+        // Present sorting options for organizing the task list
         public static void SortTaskListMenu()
         {
             Console.WriteLine("Show Task List Sorted By:");
@@ -40,7 +42,7 @@ namespace ToDoLy
             Console.WriteLine("Enter option:");
         }
 
-        // Shows the user a menu to select status of the task
+        // Present options for setting a task's status
         public static void SelectTaskStatusMenu()
         {
             Console.WriteLine("Set Task Status to:");
@@ -50,16 +52,16 @@ namespace ToDoLy
             Console.WriteLine("(4): \"Completed\"");
             Console.WriteLine("Enter option:");
         }
-
+        // Method to display the save menu with options to save or discard changes
         public static void SaveMenu()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("(1): Save");
-            Console.WriteLine("(2): Do Not Save");
+            Console.WriteLine("(1): Save Changes");
+            Console.WriteLine("(2): Discard Changes");
             Console.WriteLine("Enter option:");
         }
 
-        // Menu for selecting task
+        // Display an input prompt to specify the task to edit
         public static void SelectTaskToEditMenu()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -67,7 +69,7 @@ namespace ToDoLy
             Console.WriteLine("Enter The Task Number of the Task To Edit:");
         }
 
-        // Menu for Editing Task
+        // Present options for editing a selected task
         public static void EditTaskMenu()
         {
             Console.WriteLine("Edit Task:");
