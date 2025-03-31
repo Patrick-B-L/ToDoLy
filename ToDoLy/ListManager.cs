@@ -7,40 +7,40 @@ using System.Threading.Tasks;
 
 namespace ToDoLy
 {
-    // Methods for managing lists
-
+    // Methods for managing the task list
     class ListManager
     {
-        // Creates a list from the ToDoTask class
+        // List that stores all ToDoTask objects
         public static List<ToDoTask> toDoTaskList = new List<ToDoTask>();
 
-        // Adds ToDoTask to toDoTaskList
+        // Adds a task to the list
         public static void AddTasktoDoTaskList(ToDoTask toDoTask)
         {
-            toDoTaskList.Add(toDoTask);
+            toDoTaskList.Add(toDoTask); // Adds the provided task to the list
         }
 
-        // Sort toDoTaskList
-
+        // Returns a sorted copy of the task list by due date
         public static List<ToDoTask> ToDoTaskListOrderedByDueDate()
         {
             return toDoTaskList.OrderBy(toDoTask => toDoTask.DueDate).ToList();
         }
 
+        // Returns a sorted copy of the task list by project name
         public static List<ToDoTask> ToDoTaskListOrderedByProject()
         {
             return toDoTaskList.OrderBy(toDoTask => toDoTask.Project).ToList();
         }
 
-        // Show items in list
+        // Displays the task list sorted by due date
         public static void ShowDiagramToDoTasksOrderedByDueDate()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-            // Diagram header
+            // Print table headers
             Console.WriteLine("Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
             Console.WriteLine("-----".PadRight(30) + "--------".PadRight(20) + "------".PadRight(20) + "-------");
 
+            // Loop through sorted list and display each task
             foreach (var task in ToDoTaskListOrderedByDueDate())
             {
                 Console.WriteLine(task.Title.PadRight(30) + task.DueDate.ToString().PadRight(20) + task.Status.PadRight(20) + task.Project);
@@ -49,14 +49,16 @@ namespace ToDoLy
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
+        // Displays the task list sorted by project
         public static void ShowDiagramToDoTasksOrderedByProject()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-            // Diagram header
+            // Print table headers
             Console.WriteLine("Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
             Console.WriteLine("-----".PadRight(30) + "--------".PadRight(20) + "------".PadRight(20) + "-------");
 
+            // Loop through sorted list and display each task
             foreach (var task in ToDoTaskListOrderedByProject())
             {
                 Console.WriteLine(task.Title.PadRight(30) + task.DueDate.ToString().PadRight(20) + task.Status.PadRight(20) + task.Project);
@@ -65,14 +67,16 @@ namespace ToDoLy
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
+        // Displays all tasks with their index in the list
         public static void ShowDiagramToDoTasksWithIndex()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-            // Diagram header
+            // Print table headers
             Console.WriteLine("Task Number".PadRight(20) + "Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
             Console.WriteLine("-----------".PadRight(20) + "--------".PadRight(30) + "------".PadRight(20) + "-------");
 
+            // Display each task along with its index
             int index = 1;
             foreach (var task in toDoTaskList)
             {
@@ -83,26 +87,28 @@ namespace ToDoLy
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
+        // Returns the total number of tasks in the list
         public static int GetCountTotalNumberOfTasks()
-        { 
-            int totalNumberOfTasks = toDoTaskList.Count();
-            return totalNumberOfTasks;
+        {
+            return toDoTaskList.Count(); // Counts all tasks in the list
         }
 
+        // Returns the number of completed tasks
         public static int GetCountTotalNumberOfTasksDone()
         {
-            int totalNumberOfTasksDone = toDoTaskList.Where(task => task.Status.Contains("Done")).Count();
-            return totalNumberOfTasksDone;
+            return toDoTaskList.Where(task => task.Status.Contains("Done")).Count();
         }
 
+        // Returns the number of tasks yet to be completed
         public static int GetCountTotalNumberOfTasksToDo()
         {
-            int totalNumberOfTasksToDo = GetCountTotalNumberOfTasks() - GetCountTotalNumberOfTasksDone();
-            return totalNumberOfTasksToDo;
+            return GetCountTotalNumberOfTasks() - GetCountTotalNumberOfTasksDone();
         }
 
+        // Initializes the task list with sample data for demonstration purposes
         public static void InitializeSampleData()
         {
+            // Adds a collection of predefined tasks to the list
             ListManager.AddTasktoDoTaskList(new ToDoTask("Buy groceries", new DateOnly(2025, 3, 28), "Pending", "Personal"));
             ListManager.AddTasktoDoTaskList(new ToDoTask("Submit report", new DateOnly(2025, 3, 27), "In Progress", "Work"));
             ListManager.AddTasktoDoTaskList(new ToDoTask("Book dentist appointment", new DateOnly(2025, 4, 1), "Pending", "Health"));
@@ -116,7 +122,6 @@ namespace ToDoLy
             ListManager.AddTasktoDoTaskList(new ToDoTask("Attend webinar", new DateOnly(2025, 4, 3), "Scheduled", "Learning"));
             ListManager.AddTasktoDoTaskList(new ToDoTask("Fix bike", new DateOnly(2025, 4, 1), "Pending", "Personal"));
             ListManager.AddTasktoDoTaskList(new ToDoTask("Organize bookshelf", new DateOnly(2025, 3, 29), "Pending", "Home"));
-
         }
     }
 }

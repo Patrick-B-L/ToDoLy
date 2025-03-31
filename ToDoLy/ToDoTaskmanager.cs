@@ -7,31 +7,36 @@ using System.Threading.Tasks;
 
 namespace ToDoLy
 {
-    // Methods for managing ToDoTask
+    // Methods for managing tasks in the application
     class ToDoTaskManager
     {
-        // Method for adding a new task
+        // Method for adding a new task to the list
         public static void AddNewToDoTask()
         {
             Console.WriteLine("Add New Task");
 
-            string title = InputValidator.GetValidTitle();
-            DateOnly dueDate = InputValidator.GetValidDueDate();
-            string status = InputValidator.GetValidStatus();
-            string project = InputValidator.GetValidProject();
+            // Prompt user for task details
+            string title = InputValidator.GetValidTitle(); // Get the task title
+            DateOnly dueDate = InputValidator.GetValidDueDate(); // Get the due date
+            string status = InputValidator.GetValidStatus(); // Get the task status
+            string project = InputValidator.GetValidProject(); // Get the project name
 
+            // Display the entered details for user confirmation
             Console.WriteLine("You have entered the following:");
             Console.WriteLine($"Title: \t\t {title}");
             Console.WriteLine($"Due date: \t {dueDate}");
             Console.WriteLine($"Status: \t {status}");
             Console.WriteLine($"Project: \t {project}");
 
+            // Present Save Menu to confirm task creation
             Display.SaveMenu();
 
+            // Handle user's choice from Save Menu
             switch (InputValidator.GetOptionSaveMenu())
             {
                 case 1:
                     {
+                        // Add task to the task list
                         ListManager.AddTasktoDoTaskList(new ToDoTask(title, dueDate, status, project));
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("New Task Saved!");
@@ -40,52 +45,60 @@ namespace ToDoLy
                     }
                 case 2:
                     {
+                        // Notify user that the task was not saved
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(" New Task Is Not Saved!");
+                        Console.WriteLine("New Task Is Not Saved!");
                         Console.ResetColor();
                         break;
                     }
             }
         }
-        // Method for updating a task
+
+        // Method for editing an existing task in the list
         public static void EditToDoTask()
         {
-            // Menu for selecting task
+            // Display menu for selecting a task to edit
             Display.SelectTaskToEditMenu();
 
-            // Get selected task to edit
+            // Get the index of the task to be edited
             int selectedTaskToEdit = (InputValidator.GetOptionSelectTaskToEditMenu() - 1);
 
-            // Show the task to edit
-            Console.WriteLine((selectedTaskToEdit + 1).ToString().PadRight(20) + ListManager.toDoTaskList[selectedTaskToEdit].Title.PadRight(30) + ListManager.toDoTaskList[selectedTaskToEdit].DueDate.ToString().PadRight(20) + ListManager.toDoTaskList[selectedTaskToEdit].Status.PadRight(20) + ListManager.toDoTaskList[selectedTaskToEdit].Project);
+            // Display the details of the selected task for editing
+            Console.WriteLine((selectedTaskToEdit + 1).ToString().PadRight(20)
+                + ListManager.toDoTaskList[selectedTaskToEdit].Title.PadRight(30)
+                + ListManager.toDoTaskList[selectedTaskToEdit].DueDate.ToString().PadRight(20)
+                + ListManager.toDoTaskList[selectedTaskToEdit].Status.PadRight(20)
+                + ListManager.toDoTaskList[selectedTaskToEdit].Project);
 
-            // Show Edit Task Menu
+            // Display the edit menu with available options
             Display.EditTaskMenu();
 
-            // Get Users Choice from Edit Task Menu
+            // Get user's choice from the edit menu
             int optionEditTaskMenu = InputValidator.GetOptionEditTaskMenu();
 
             switch (optionEditTaskMenu)
             {
                 case 1:
-                    // Prompt the properties of the task and ask for input
+                    // Update the selected task's details
                     Console.WriteLine("Update Task");
 
+                    // Prompt user for updated task details
                     string title = InputValidator.GetValidTitle();
                     DateOnly dueDate = InputValidator.GetValidDueDate();
                     string status = InputValidator.GetValidStatus();
                     string project = InputValidator.GetValidProject();
 
+                    // Display the updated details for confirmation
                     Console.WriteLine("You have entered the following:");
                     Console.WriteLine($"Title: \t\t {title}");
                     Console.WriteLine($"Due date: \t {dueDate}");
                     Console.WriteLine($"Status: \t {status}");
                     Console.WriteLine($"Project: \t {project}");
 
-                    // Show Save Menu
+                    // Show Save Menu to confirm updates
                     Display.SaveMenu();
 
-                    // Exit With Save or Do Not Save
+                    // Handle user's choice to save or discard updates
                     switch (InputValidator.GetOptionSaveMenu())
                     {
                         case 1:
@@ -105,13 +118,16 @@ namespace ToDoLy
                             }
                     }
                     break;
+
                 case 2:
+                    // Mark the selected task as "Done"
                     Console.WriteLine("Mark As Done");
                     Console.WriteLine("The Task Is Marked As Done");
-                    // Show Save Menu
+
+                    // Show Save Menu to confirm the status change
                     Display.SaveMenu();
 
-                    // Exit With Save or Do Not Save
+                    // Handle user's choice to save or discard the status change
                     switch (InputValidator.GetOptionSaveMenu())
                     {
                         case 1:
@@ -130,15 +146,17 @@ namespace ToDoLy
                                 break;
                             }
                     }
-
                     break;
+
                 case 3:
+                    // Remove the selected task from the list
                     Console.WriteLine("Remove Task");
                     Console.WriteLine("The Task Is Removed");
-                    // Show Save Menu
+
+                    // Show Save Menu to confirm the removal
                     Display.SaveMenu();
 
-                    // Exit With Save or Do Not Save
+                    // Handle user's choice to save or discard the removal
                     switch (InputValidator.GetOptionSaveMenu())
                     {
                         case 1:
@@ -159,15 +177,6 @@ namespace ToDoLy
                     }
                     break;
             }
-            
-            }
-                        
-            
-
-
-
-
-
-
+        }
     }
 }
