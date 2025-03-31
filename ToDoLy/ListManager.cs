@@ -34,7 +34,10 @@ namespace ToDoLy
         // Displays the task list sorted by due date
         public static void ShowDiagramToDoTasksOrderedByDueDate()
         {
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTask List Ordered By Due Date");
+            Console.ResetColor();
+            Console.WriteLine("---------------------------------------------------------------------------------");
 
             // Print table headers
             Console.WriteLine("Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
@@ -46,13 +49,16 @@ namespace ToDoLy
                 Console.WriteLine(task.Title.PadRight(30) + task.DueDate.ToString().PadRight(20) + task.Status.PadRight(20) + task.Project);
             }
 
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------------------------");
         }
 
         // Displays the task list sorted by project
         public static void ShowDiagramToDoTasksOrderedByProject()
         {
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTask List Ordered By Project");
+            Console.ResetColor();
+            Console.WriteLine("---------------------------------------------------------------------------------"); 
 
             // Print table headers
             Console.WriteLine("Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
@@ -64,14 +70,16 @@ namespace ToDoLy
                 Console.WriteLine(task.Title.PadRight(30) + task.DueDate.ToString().PadRight(20) + task.Status.PadRight(20) + task.Project);
             }
 
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------------------------");
         }
 
         // Displays all tasks with their index in the list
         public static void ShowDiagramToDoTasksWithIndex()
         {
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTask List Ordered By Task Number (The Latest Added Task Is Shown Last)");
+            Console.ResetColor();
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------");
             // Print table headers
             Console.WriteLine("Task Number".PadRight(20) + "Title".PadRight(30) + "Due Date".PadRight(20) + "Status".PadRight(20) + "Project");
             Console.WriteLine("-----------".PadRight(20) + "--------".PadRight(30) + "------".PadRight(20) + "-------");
@@ -84,7 +92,7 @@ namespace ToDoLy
                 index++;
             }
 
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------");
         }
 
         // Returns the total number of tasks in the list

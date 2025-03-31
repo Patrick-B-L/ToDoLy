@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using ToDoLy;
 
-// Continue with: updating comments, cleaning up the code and make the user experience more intuitive by adding lines and changing text colors etc... 
+// Continue with: cleaning up the code. 
 //Remember to commit and push to Github every now and then
 
 // This application is a task management system allowing users to manage and organize tasks.
