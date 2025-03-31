@@ -10,16 +10,11 @@ using ToDoLy;
 
 FileManager.LoadFromFile();
 
-//Add code for reading text from file and then printing it on the console
-//string readFile = File.ReadAllText("testfiltask1.txt");
-//Console.WriteLine(readFile);
-
-//Welcome the user and present choices on how to proceed.
-
+//Welcome the user and show status for the existing tasks
 Display.Greeting();
 Display.ShowStatus();
 
-
+//Present choices on how to proceed.
 while (true)
 {
     Display.MainMenu();
@@ -61,9 +56,6 @@ while (true)
 
             FileManager.SaveToFile();
             Environment.Exit(0);
-            //Add code for (saving) printing text to file and then to exit the program
-            //string readFile = File.ReadAllText("testfiltask1.txt");
-            //Console.WriteLine(readFile);
             break;
 
     }
