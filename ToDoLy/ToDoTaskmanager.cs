@@ -13,7 +13,10 @@ namespace ToDoLy
         // Method for adding a new task to the list
         public static void AddNewToDoTask()
         {
+            Console.WriteLine("\n---------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Add New Task");
+            Console.ResetColor();
 
             // Prompt user for task details
             string title = InputValidator.GetValidTitle(); // Get the task title
@@ -80,7 +83,10 @@ namespace ToDoLy
             {
                 case 1:
                     // Update the selected task's details
+                    Console.WriteLine("\n---------------------------------------------------------------------------------");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Update Task");
+                    Console.ResetColor();
 
                     // Prompt user for updated task details
                     string title = InputValidator.GetValidTitle();
@@ -121,7 +127,11 @@ namespace ToDoLy
 
                 case 2:
                     // Mark the selected task as "Done"
+                    Console.WriteLine("\n---------------------------------------------------------------------------------");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Mark As Done");
+                    Console.ResetColor();
+
                     Console.WriteLine("The Task Is Marked As Done");
 
                     // Show Save Menu to confirm the status change
@@ -150,7 +160,11 @@ namespace ToDoLy
 
                 case 3:
                     // Remove the selected task from the list
+                    Console.WriteLine("\n---------------------------------------------------------------------------------");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Remove Task");
+                    Console.ResetColor();
+
                     Console.WriteLine("The Task Is Removed");
 
                     // Show Save Menu to confirm the removal
