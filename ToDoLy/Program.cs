@@ -5,55 +5,65 @@ using ToDoLy;
 // Continue with: updating comments, cleaning up the code and make the user experience more intuitive by adding lines and changing text colors etc... 
 //Remember to commit and push to Github every now and then
 
+// This application is a task management system allowing users to manage and organize tasks.
+// Features include sorting tasks by due date or project, adding and editing tasks, and saving them persistently.
+
 // Only for testing purposes
 //Listmanager.InitializeSampleData();
 
+// Load existing tasks from a file
 FileManager.LoadFromFile();
 
-//Welcome the user and show status for the existing tasks
+// Welcome the user and display the current task status
 Display.Greeting();
 Display.ShowStatus();
 
-//Present choices on how to proceed.
+// Main loop: Present the user with options to proceed until they choose to exit
 while (true)
 {
+    // Display the main menu options
     Display.MainMenu();
+
+    // Get the user's selected option from the main menu
     int mainMenuOption = InputValidator.GetOptionMainMenu();
     switch (mainMenuOption)
     {
         case 1:
 
-
+            // Provide sorting options for the task list
             Display.SortTaskListMenu();
 
-            ;
-            switch(InputValidator.GetOptionSortTaskListMenu())
+            // Handle the user's selection for sorting tasks
+            switch (InputValidator.GetOptionSortTaskListMenu())
             {
                 case 1:
+                    // Sort and display tasks ordered by their due dates
                     ListManager.ShowDiagramToDoTasksOrderedByDueDate();
                     break;
                 case 2:
+                    // Sort and display tasks grouped by project
                     ListManager.ShowDiagramToDoTasksOrderedByProject();
                     break;
                 case 3:
+                    // Display all tasks with their index numbers
                     ListManager.ShowDiagramToDoTasksWithIndex();
                     break;
             }
             break;
         case 2:
-
+            // Allow the user to add a new task to the list
             ToDoTaskManager.AddNewToDoTask();
             break;
         case 3:
 
-            // Show Diagram with index
+            // Display all tasks with index numbers
             ListManager.ShowDiagramToDoTasksWithIndex();
 
+            // Allow the user to edit an existing task
             ToDoTaskManager.EditToDoTask();
-
             break;
         case 4:
-
+            // Save all tasks to a file and exit the application
             FileManager.SaveToFile();
             Environment.Exit(0);
             break;
