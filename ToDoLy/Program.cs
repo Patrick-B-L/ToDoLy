@@ -8,7 +8,7 @@ using ToDoLy;
 // This application is a task management system allowing users to manage and organize tasks.
 // Features include sorting tasks by due date or project, adding and editing tasks, and saving them persistently.
 
-// Only for testing purposes
+// Only for demonstration purposes
 //Listmanager.InitializeSampleData();
 
 // Load existing tasks from a file

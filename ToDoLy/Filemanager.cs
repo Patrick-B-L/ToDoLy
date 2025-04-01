@@ -48,18 +48,5 @@ namespace ToDoLy
             // If the file does not exist, return an empty task list
             return new List<ToDoTask>();
         }
-
-        // The following commented-out code fragments seem to be experiments or drafts
-        // These should be reviewed or removed if no longer needed to keep the code clean
-
-        // Console.WriteLine($"{task1.Title}, {task1.DueDate}, {task1.Status}, {task1.Project}");
-        // File.AppendAllLines("testfiltask1.txt", task11);
-
-        //{
-        //    File.WriteAllText("testfil.txt", title);
-        //    File.AppendAllText("testfil.txt", Convert.ToString(dueDate));
-        //    File.AppendAllText("testfil.txt", status);
-        //    File.AppendAllText("testfil.txt", project);
-        //}
     }
 }

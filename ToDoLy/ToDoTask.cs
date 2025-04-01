@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ToDoLy
-{
+{   // The ToDoTask class: Constructor with properties for task objects.  
     class ToDoTask
     {
         public ToDoTask(string title, DateOnly dueDate, string status, string project) 
