@@ -131,7 +131,7 @@ namespace ToDoLy
                         case 2:
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("Task Updates Is Not Saved!");
+                                Console.WriteLine("Task Updates Are Not Saved!");
                                 Console.ResetColor();
                                 break;
                             }
@@ -164,7 +164,7 @@ namespace ToDoLy
                         case 2:
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("Task Updates Is Not Saved!");
+                                Console.WriteLine("Task Updates Are Not Saved!");
                                 Console.ResetColor();
                                 break;
                             }
@@ -197,7 +197,7 @@ namespace ToDoLy
                         case 2:
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                Console.WriteLine("Task Updates Is Not Saved!");
+                                Console.WriteLine("Task Updates Are Not Saved!");
                                 Console.ResetColor();
                                 break;
                             }
