@@ -39,7 +39,7 @@ namespace ToDoLy
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Main Menu:");
             Console.ResetColor();
-            Console.WriteLine("(1): Show Task List (by date or project)");
+            Console.WriteLine("(1): Show Task List (by due date, project or added)");
             Console.WriteLine("(2): Add New Task");
             Console.WriteLine("(3): Edit Task (update, mark as done, remove)");
             Console.WriteLine("(4): Save and Quit");
@@ -57,7 +57,7 @@ namespace ToDoLy
             Console.ResetColor();
             Console.WriteLine("(1): Due Date");
             Console.WriteLine("(2): Project");
-            Console.WriteLine("(3): Task Number (The Latest Added Task Is Shown Last)");
+            Console.WriteLine("(3): Added (The Most Recently Added Task Is Shown Last)");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Enter option:");
             Console.ResetColor();
