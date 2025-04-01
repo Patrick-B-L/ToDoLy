@@ -25,7 +25,11 @@ namespace ToDoLy
             string project = InputValidator.GetValidProject(); // Get the project name
 
             // Display the entered details for user confirmation
+            Console.WriteLine("\n---------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("You have entered the following:");
+            Console.ResetColor();
+
             Console.WriteLine($"Title: \t\t {title}");
             Console.WriteLine($"Due date: \t {dueDate}");
             Console.WriteLine($"Status: \t {status}");
@@ -49,7 +53,7 @@ namespace ToDoLy
                 case 2:
                     {
                         // Notify user that the task was not saved
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("New Task Is Not Saved!");
                         Console.ResetColor();
                         break;
@@ -67,6 +71,11 @@ namespace ToDoLy
             int selectedTaskToEdit = (InputValidator.GetOptionSelectTaskToEditMenu() - 1);
 
             // Display the details of the selected task for editing
+            Console.WriteLine("\n---------------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Selected Task For Editing:");
+            Console.ResetColor();
+
             Console.WriteLine((selectedTaskToEdit + 1).ToString().PadRight(20)
                 + ListManager.toDoTaskList[selectedTaskToEdit].Title.PadRight(30)
                 + ListManager.toDoTaskList[selectedTaskToEdit].DueDate.ToString().PadRight(20)
@@ -95,7 +104,11 @@ namespace ToDoLy
                     string project = InputValidator.GetValidProject();
 
                     // Display the updated details for confirmation
+                    Console.WriteLine("\n---------------------------------------------------------------------------------");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("You have entered the following:");
+                    Console.ResetColor();
+
                     Console.WriteLine($"Title: \t\t {title}");
                     Console.WriteLine($"Due date: \t {dueDate}");
                     Console.WriteLine($"Status: \t {status}");
@@ -117,7 +130,7 @@ namespace ToDoLy
                             }
                         case 2:
                             {
-                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.WriteLine("Task Updates Is Not Saved!");
                                 Console.ResetColor();
                                 break;
@@ -150,7 +163,7 @@ namespace ToDoLy
                             }
                         case 2:
                             {
-                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.WriteLine("Task Updates Is Not Saved!");
                                 Console.ResetColor();
                                 break;
@@ -183,7 +196,7 @@ namespace ToDoLy
                             }
                         case 2:
                             {
-                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.WriteLine("Task Updates Is Not Saved!");
                                 Console.ResetColor();
                                 break;

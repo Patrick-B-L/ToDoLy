@@ -77,7 +77,7 @@ namespace ToDoLy
         public static void ShowDiagramToDoTasksWithIndex()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTask List Ordered By Task Number (The Latest Added Task Is Shown Last)");
+            Console.WriteLine("\nTask List Ordered By Added. (The Most Recently Added Task Is Shown Last)");
             Console.ResetColor();
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------");
             // Print table headers
