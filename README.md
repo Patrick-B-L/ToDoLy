@@ -54,7 +54,6 @@ ToDoLy is a feature-rich task management application designed to help users orga
 - Compatible with Windows, macOS, or Linux operating systems.
 
 ## File Structure
-- `ToDoLy.sln`: The Visual Studio solution file for the project.
 - `ToDoLy.json`: Persistent storage file for saving tasks across sessions.
 
 ## Notes
