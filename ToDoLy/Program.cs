@@ -2,17 +2,14 @@
 using System.Linq.Expressions;
 using ToDoLy;
 
-// Continue with: cleaning up the code. 
-//Remember to commit and push to Github every now and then
-
 // This application is a task management system allowing users to manage and organize tasks.
 // Features include sorting tasks by due date or project, adding and editing tasks, and saving them persistently.
 
-// Only for demonstration purposes
-//Listmanager.InitializeSampleData();
-
 // Load existing tasks from a file
 FileManager.LoadFromFile();
+
+// Only for demonstration purposes
+//Listmanager.InitializeSampleData();
 
 // Welcome the user and display the current task status
 Display.Greeting();
